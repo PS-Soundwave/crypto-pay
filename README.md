@@ -12,8 +12,7 @@ A TypeScript library for ultra-lightweight cryptocurrency payment processing. Th
 
 - **Node**: 20.18.1
 - **Language**: TypeScript
-- **Cryptocurrency Libraries**: bitcoinjs-lib, ethers, monero-ts
-- **Primatives**: @noble/ed25519, base58-monero
+- **Cryptocurrency Libraries**: bitcoinjs-lib, ethers
 - **Development Tools**: ESLint, Prettier
 
 ## Getting Started
