@@ -26,7 +26,7 @@ type GetBlockVerbose2Response = {
             scriptSig: {
                 asm: string;
                 hex: string;
-            },
+            };
             sequence: number;
             txinwitness: string[];
         }[];
@@ -39,7 +39,7 @@ type GetBlockVerbose2Response = {
                 reqSigs: number;
                 type: string;
                 addresses: string[];
-            }
+            };
         }[];
         blockhash: string;
         confirmations: number;
@@ -55,16 +55,29 @@ type GetBlockVerbose2Response = {
     nTx: number;
     previousblockhash: string;
     nextblockhash: string;
-}
+};
 
-export const getBlockCount = async (config: JsonRPCClientConfig): Promise<number> => {
+export const getBlockCount = async (
+    config: JsonRPCClientConfig
+): Promise<number> => {
     return (await call(config, "getblockcount")) as unknown as number;
-}
+};
 
-export const getBlockHash = async (config: JsonRPCClientConfig, blockHeight: number): Promise<string> => {
-    return (await call(config, "getblockhash", [blockHeight])) as unknown as string;
-}
+export const getBlockHash = async (
+    config: JsonRPCClientConfig,
+    blockHeight: number
+): Promise<string> => {
+    return (await call(config, "getblockhash", [
+        blockHeight
+    ])) as unknown as string;
+};
 
-export const getBlock = async (config: JsonRPCClientConfig, blockHash: string): Promise<GetBlockVerbose2Response> => {
-    return (await call(config, "getblock", [blockHash, 2])) as unknown as GetBlockVerbose2Response;
-}
+export const getBlock = async (
+    config: JsonRPCClientConfig,
+    blockHash: string
+): Promise<GetBlockVerbose2Response> => {
+    return (await call(config, "getblock", [
+        blockHash,
+        2
+    ])) as unknown as GetBlockVerbose2Response;
+};
